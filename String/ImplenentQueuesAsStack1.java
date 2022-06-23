@@ -1,0 +1,65 @@
+import java.util.*;
+
+class ImplenentQueuesAsStack1
+{
+	public static void main(String[] args) 
+	{
+		Stacks st = new Stacks();
+		st.push(1);
+		st.push(2);
+		st.push(3);
+		st.push(4);
+		st.peek();
+
+		st.pop();
+		st.peek();
+
+		st.push(10);
+
+		st.peek();
+	}
+}
+
+class Stacks
+{
+	Queue<Integer> q1 = new LinkedList<>();
+	Queue<Integer> q2 = new LinkedList<>();
+
+	void push(int data){
+		if(q1.isEmpty()){
+			q1.add(data);
+		}
+		else{
+			while(!q1.isEmpty()){
+				q2.add(q1.peek());
+				q1.poll();
+			}
+
+			q1.add(data);
+
+			while(!q2.isEmpty()){
+				q1.add(q2.peek());
+				q2.poll();
+			}
+		}
+	}
+
+	void peek(){
+		if(q1.isEmpty()){
+			System.out.println("Stack is Empty");
+		}
+		else{
+			System.out.println(q1.peek());
+		}
+	}
+
+	void pop(){
+		if(q1.isEmpty()){
+			System.out.println("Stack is Empty");
+		}
+		else{
+			System.out.println(q1.peek());
+			q1.poll();
+		}
+	}
+}

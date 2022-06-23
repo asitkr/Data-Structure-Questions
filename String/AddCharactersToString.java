@@ -1,0 +1,36 @@
+class AddCharactersToString
+{
+	public static void main(String[] args) 
+	{
+		/*String s = "GeeksForGeeks";
+		char c = 'A';
+		
+		//Add at end of the string
+		s = s+c;
+		System.out.println(s);
+		
+		//Add at Begining of the string
+		s = c+s;
+		System.out.println(s);
+
+		StringBuilder sb = new StringBuilder("GeeksorGeeks");
+		sb.insert(5, 'F');
+
+		System.out.println(sb);*/
+
+
+		//StringBuilder sb = new StringBuilder("GeeksorGeeks");
+		//sb.substring(0, 5) + 'F' + sb.substring(5);
+		String sb = "GeeksorGeeks";
+		char ch = 'F';
+		int pos = 5;
+
+		String s = addString(sb, pos, ch); 
+
+		System.out.println(s);
+	}
+
+	public static String addString(String str, int pos, char c){
+		return str.substring(0, pos) + c + str.substring(pos);
+	}
+}

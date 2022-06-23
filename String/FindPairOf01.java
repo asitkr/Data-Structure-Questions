@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class FindPairOf01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		
+		int count0 = 0;
+		int count1 = 0;
+		int count =0;
+		
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i) == '0') {
+				count0++;
+			}
+			else {
+				count1++;
+			}
+			if(count0 == count1) {
+				count++;
+			}
+		}
+		System.out.println(count);
+		
+		sc.close();
+	}
+
+}

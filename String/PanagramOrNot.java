@@ -1,0 +1,44 @@
+class PanagramOrNot 
+{
+	public static void main(String[] args) 
+	{
+		String s = "abcde fghi jklm nopqrs tuvwxyz";
+
+		if(checkPanagram(s)){
+			System.out.println("Yes");
+		}
+		else{
+			System.out.println("No");
+		}
+	}
+
+	public static boolean checkPanagram(String s){
+		
+		if(s.length() == 0){
+			return false;
+		}
+
+		boolean[] arr = new boolean[26];
+		int index = 0;
+
+		for(int i=0; i<s.length(); i++){
+			s = s.toLowerCase();
+			if('a' <= s.charAt(i) && s.charAt(i) <= 'z'){
+				index = s.charAt(i) - 'a';
+			}
+			else{
+				continue;
+			}
+
+			arr[index] = true;
+		}
+
+		//for(int i=0; i<=25; i++){
+		//	if(arr[i] == false){
+		//		return false;
+		//	}
+		//}
+
+		return true;
+	}
+}

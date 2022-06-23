@@ -1,0 +1,60 @@
+import java.util.*;
+
+class ImplenentDequeueAsStack
+{
+	public static void main(String[] args) 
+	{
+		Stacks st = new Stacks();
+		st.push(1);
+		st.push(2);
+		st.push(3);
+		st.push(4);
+
+		st.peek();
+		//s
+	}
+}
+
+class Stacks
+{
+	Deque<Integer> dq1 = new LinkedList<>();
+	Deque<Integer> dq2 = new LinkedList<>();
+
+	void push(int data){
+		if(dq1.isEmpty()){
+			dq1.add(data);
+		}
+		else{
+			while(!dq1.isEmpty()){
+				dq2.add(dq1.peekFirst());
+				dq1.poll();
+			}
+
+			dq1.add(data);
+
+			while(!dq2.isEmpty()){
+				dq1.add(dq2.peekFirst());
+				dq2.poll();
+			}
+		}
+	}
+
+	void peek(){
+		if(dq1.isEmpty()){
+			System.out.println("Stack is Empty");
+		}
+		else{
+			System.out.println(dq1.peekFirst());
+		}
+	}
+
+	void pop(){
+		if(dq1.isEmpty()){
+			System.out.println("Stack is empty");
+		}
+		else{
+			System.out.println(dq1.peekFirst());
+			dq1.poll();
+		}
+	}
+}

@@ -1,0 +1,33 @@
+class TooYoungException extends RuntimeException {
+	TooYoungException(String msg) {
+		super(msg);
+	}
+}
+
+class TooOldException extends RuntimeException {
+	TooOldException(String msg) {
+		super(msg);
+	}
+}
+
+public class UserDefinedException {
+
+	public static void main(String[] args) {
+		
+		int age = Integer.parseInt(args[0]);
+		
+		if(age < 18 )
+		{
+			throw new TooYoungException("Please wait some time, definetly you will get best match");
+		}
+		else if(age > 60)
+		{
+			throw new TooOldException("Your age already crossed, marriage no chance of getting marriage");
+		}
+		else
+		{
+			System.out.println("Thanks for register us, By mail");
+		}
+	}
+
+}

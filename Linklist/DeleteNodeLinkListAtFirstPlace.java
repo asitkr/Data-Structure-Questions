@@ -1,0 +1,62 @@
+import java.util.*;
+
+class Node
+{
+	int x;
+	Node next;
+	Node(int x){
+		this.x = x;
+	}
+}
+
+class DeleteNodeLinkListAtFirstPlace
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		Node head = null;
+		Node temp = null;
+
+		for(int i=0; i<n; i++){
+			int x = sc.nextInt();
+			Node newNode = new Node(x);
+
+			if(head == null){
+				head = newNode;
+				temp = head;
+			}
+			else{
+				temp.next = newNode;
+				temp = temp.next; 
+			}
+		}
+		
+
+		printList(head);
+		head = deleteAtFirst(head);
+		printList(head);
+	}
+
+	static Node deleteAtFirst(Node head){
+		if(head == null){
+			return head;
+		}
+		else{
+			head = head.next;
+			return head;
+		}
+	}
+
+	static void printList(Node head){
+		if(head == null){
+			return;
+		}
+		while(head != null){
+			System.out.print(head.x + " " );
+			head = head.next;
+		}
+		System.out.println();
+	}
+}

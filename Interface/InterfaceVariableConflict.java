@@ -1,0 +1,20 @@
+interface A
+{
+	int x = 10;
+}
+
+interface B
+{
+	int x = 100;
+}
+
+class InterfaceVariableConflict implements A,B 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Interface Variable Conflict"); //By using interface name there is no conflict
+		//System.out.println(x); //gives compile time error  
+		System.out.println("Interface A " + A.x);
+		System.out.println("Interface B " + B.x);
+	}
+}

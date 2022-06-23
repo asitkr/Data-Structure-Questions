@@ -1,0 +1,28 @@
+class StaticMethod1 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Main Methods Start...");
+		StaticMethod1.run();
+		System.out.println("Main Methods End...");
+	}
+
+	static void run()
+	{
+		System.out.println("Static run method");
+		StaticMethod1.eat();
+	}
+
+	static
+	{
+		System.out.println("Start Block");
+		StaticMethod1.run();
+		System.out.println("End Block");
+	}
+
+	static void eat()
+	{
+		System.out.println("Static Eat Method");
+		StaticMethod1.run();
+	}
+}

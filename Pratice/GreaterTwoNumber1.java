@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class GreaterTwoNumber1 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Check the two number which is greater ");
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter First Number");
+		int A = sc.nextInt();
+
+		System.out.println("Enter Second Number");
+		int B = sc.nextInt();
+
+		if (A>B)
+		{
+			System.out.println(A + " is Greater Number");
+		}
+		else
+		{
+			System.out.println(B + " is Greater Number");
+		}
+	}
+}

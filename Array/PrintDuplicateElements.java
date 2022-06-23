@@ -1,0 +1,18 @@
+class PrintDuplicateElements 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {90, 20, 10, 30, 70, 10, 30, 40, 20};
+		int n = arr.length;
+
+		for(int i=0; i<n; i++){
+			arr[arr[i] % n] = arr[arr[i] % n] + n;
+		}
+
+		for(int i=0; i<n; i++){
+			if(arr[i] >= n * 2){
+				System.out.println(i + " ");
+			}
+		}
+	}
+}

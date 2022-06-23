@@ -1,0 +1,54 @@
+//import java.lang.Character;
+import java.util.Stack;
+
+class BalanceBracketStack
+{
+	public static void main(String[] args) 
+	{
+		String str = "[()]{}{[()()]()}";
+
+		Stack<Integer> st = new Stack<>();
+
+		if(str.charAt(0) == ')' || str.charAt(0) == '}' || str.charAt(0) == ']') {
+			System.out.println("Not Balanced");
+		}else{
+			
+			int i = 0;
+			while(i < str.length()){
+				char ch = str.charAt(i);
+
+				if(ch == '(' || ch == '{' || ch == '[') st.push(i);
+
+				else if(ch == ')' && !st.isEmpty()){
+					if(str.charAt(st.peek()) == '(') st.pop();
+					else{
+						System.out.println("Not Balanced");
+						break;
+					}
+				}
+
+				else if(ch == '}' && !st.isEmpty()){
+					if(str.charAt(st.peek()) == '{') st.pop();
+					else{
+						System.out.println("Not Balanced");
+						break;
+					}
+				}
+
+				else if(ch == ']' && !st.isEmpty()){
+					if(str.charAt(st.peek()) == '[') st.pop();
+					else{
+						System.out.println("Not Balanced");
+						break;
+					}
+				}
+
+				i++;
+			}
+
+			if(i == str.length()){
+				System.out.println("Balanced");
+			}
+		}
+	}
+}

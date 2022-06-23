@@ -1,0 +1,28 @@
+// Example of parameterized constructor
+
+class Student1
+{
+	int id;
+	String name;
+
+	Student1(int i, String n)
+	{
+		id = i;
+		name = n;
+		System.out.println("created");
+	}
+
+	void display()
+	{
+		System.out.println(id + " " + name);
+	}
+
+	public static void main(String[] args) 
+	{
+		Student1 s1 = new Student1(100, "Rahu");
+		Student1 s2 = new Student1(200, "Ketu");
+
+		s1.display();
+		s2.display();
+	}
+}

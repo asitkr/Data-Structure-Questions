@@ -1,0 +1,40 @@
+class Node
+{
+	int data;
+	Node left;
+	Node right;
+
+	Node(int data){
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+class BinaryTree
+{
+	Node root;
+
+	//Traverse Tree
+	BinaryTree(int data){
+		root = new Node(data);
+	}
+
+	BinaryTree(){
+		root = null;
+	}
+
+	public static void main(String[] args) 
+	{
+		BinaryTree tree = new BinaryTree();
+		
+		//Create Node of tree
+		tree.root = new Node(1);
+		tree.root.left = new Node(2);
+		tree.root.right = new Node(3);
+		System.out.println(tree.root.data);
+		System.out.println(tree.root.left.data);
+		System.out.println(tree.root.right.data);
+		System.out.println(tree.root.left.left.data);
+	}
+}

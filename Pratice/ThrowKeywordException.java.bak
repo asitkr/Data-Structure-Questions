@@ -1,0 +1,8 @@
+class ThrowKeywordException
+{
+	public static void main(String[] args) 
+	{
+		static ArithmeticException e;
+		throw e;
+	}
+}

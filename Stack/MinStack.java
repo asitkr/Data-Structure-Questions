@@ -1,0 +1,84 @@
+import java.util.*;
+
+class MyStack
+{
+	Stack<Integer> st = new Stack<Integer>();
+	int minEle;
+
+	void getMin(){
+		if(st.isEmpty()){
+			System.out.println("Stack is empty ");
+		}
+		else{
+			System.out.println(minEle);
+		}
+	}
+
+	void peek(){
+		if(st.isEmpty()){
+			System.out.println("Stack is empty ");
+		}
+
+		int t = st.peek();
+
+		if(t < minEle){
+			System.out.println(minEle);
+		}
+		else{
+			System.out.println(t);
+		}
+	}
+
+	void pop(){
+		if(st.isEmpty()){
+			System.out.println("Stack is empty ");
+			return;
+		}
+
+		int t = st.peek();
+		st.pop();
+
+		if(t < minEle){
+			System.out.println(minEle);
+			minEle = 2 * minEle - t;
+		}
+		else{
+			System.out.println(t);
+		}
+	}
+
+	void push(int x){
+		if(st.isEmpty()){
+			minEle = x;
+			st.push(x);
+			System.out.println("Number Inserted: " + x);
+            return;
+		}
+		else if(x < minEle){
+			st.push(2*x - minEle);
+			minEle = x;
+		}
+		else{
+			st.push(x);
+		}
+	}
+}
+
+class MinStack
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		MyStack s = new MyStack();
+		s.push(13);
+		s.push(5);
+		s.getMin();
+		s.push(27);
+		s.push(4);
+		s.getMin();
+		s.pop();
+		s.getMin();
+		s.pop();
+		s.peek();
+	}
+}

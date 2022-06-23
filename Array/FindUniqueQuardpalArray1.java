@@ -1,0 +1,48 @@
+import java.util.*;
+
+class FindUniqueQuardpalArray1 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {1, 2, -3, 4, -2, -1, 3};
+		int sum = 3;
+		int n = arr.length;
+
+		List<List<Integer>> list = new ArrayList<>();
+
+		//Arrays.sort(arr);
+
+		for(int i=0; i<n-3; i++){
+			for(int j=i+1; j<n-2; j++){
+				ArrayList<Integer> li = new ArrayList<>();
+				int ans = sum - (arr[i] + arr[j]);
+
+				int start = j+1;
+				int end = n-1;
+
+				while(start < end){
+					int k = 0;
+					if(arr[start] + arr[end] == ans){
+						li.add(arr[start]);
+						li.add(arr[end]);
+						li.add(arr[i]);
+						li.add(arr[j]);
+						list.add(li);
+						start++;
+						end--;
+					}
+
+					else if(arr[start] + arr[end] < ans){
+						start++;
+					}
+
+					else{
+						end--;
+					}
+				}
+			}
+		}
+
+	   System.out.println(list);
+	}
+}

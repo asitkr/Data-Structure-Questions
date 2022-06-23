@@ -1,0 +1,7 @@
+class ThrowsKeywordException2 extends Throwable 
+{
+	public static void main(String[] args) throws ThrowsKeywordException2
+	{
+		System.out.println("Hello World!");
+	}
+}

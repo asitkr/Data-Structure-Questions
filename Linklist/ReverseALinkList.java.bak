@@ -1,0 +1,79 @@
+class Node
+{
+	int data;
+	Node next;
+	Node(int data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class LinkList
+{
+	Node head = null;
+	Node temp = null;
+
+	void add(int x){
+		if(head == null){
+			head = new Node(x);
+			temp = head;
+		}
+		else{
+			temp.next = new Node(x);
+			temp = temp.next;
+		}
+	}
+
+	void print(){
+		if(head == null){
+			System.out.println("Linklist is empty ");
+			return;
+		}
+
+		Node curr = head;
+
+		while(curr != null){
+			System.out.print(curr.data + " " );
+			curr = curr.next;
+		}
+		System.out.println();
+	}
+
+	void reverse(){
+
+		if(head == null){
+			System.out.println("List is empty ");
+			return;
+		}
+		
+		//Node temp = head;
+		Node curr = head;
+		Node prev = null;
+		Node temp = null;
+
+		while(curr != null){
+			temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+
+		curr = temp;
+	}
+}
+
+class ReverseALinkList 
+{
+	public static void main(String[] args) 
+	{
+		LinkList ll = new LinkList();
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.add(5);
+		ll.print();
+		ll.reverse();
+		ll.print();
+	}
+}

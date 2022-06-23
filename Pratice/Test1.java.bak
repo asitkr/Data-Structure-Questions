@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Test1 
+{
+    static int isDiv(int x, int y) {
+		return (x%y == 0s) ? 1 : 0; 
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first Number from user : ");
+		int a = sc.nextInt();
+		System.out.println("Enter second Number from user : ");
+		int b = sc.nextInt();
+
+		Test1 t = new Test1();
+		System.out.println(t.isDiv(a,b));
+	}
+}

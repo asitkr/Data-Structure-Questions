@@ -1,0 +1,4 @@
+interface Try
+{
+	int x;
+}

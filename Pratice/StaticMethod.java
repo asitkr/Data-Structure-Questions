@@ -1,0 +1,14 @@
+class StaticMethod 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Main Methods Start...");
+		StaticMethod.run();
+		System.out.println("Main Methods End...!");
+	}
+
+	static void run()
+	{
+		System.out.println("Static method");
+	}
+}

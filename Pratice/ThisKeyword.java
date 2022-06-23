@@ -1,0 +1,33 @@
+class Student
+{
+	int roll;
+	String name;
+	float fee;
+
+	Student(int roll, String name, float fee)
+	{
+		this.roll = roll;
+		this.name = name;
+		this.fee = fee;
+	}
+
+	void display(){
+		System.out.println(roll + " " + name + " " + fee);
+	}
+}
+
+class ThisKeyword
+{
+	public static void main(String[] args) 
+	{
+		Student s1 = new Student(100, "hi", 500.6f);
+		Student s2 = new Student(101, "Ki", 430.3f);
+		Student s3 = new Student(102, "TR", 230.0f);
+		Student s4 = new Student(103, "WQ", 855.9f);
+
+		s1.display();
+		s2.display();
+		s3.display();
+		s4.display();
+	}
+}

@@ -1,0 +1,65 @@
+import java.util.*;
+
+class CreateLinkList 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        Node head = null;
+        Node temp = null;
+
+        for(int i=0; i<n; i++){
+            int x = sc.nextInt();
+
+            if(head == null){
+                head = new Node(x);
+                temp = head;
+            }
+            else{
+                temp.next = new Node(x);
+                temp = temp.next;
+            }
+        }
+
+        printList(head);
+		System.out.println(findMiddleElement(head));
+    }
+
+	public static int findMiddleElement(Node head){
+		if(head == null){
+			return 0;
+		}
+
+		Node slow = head;
+		Node fast = head;
+
+		while(fast != null && fast.next != null){
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+
+		return slow.data;
+	}
+
+    public static void printList(Node head){
+        if(head == null){
+            return;
+        }
+
+        while(head != null){
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+}
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+    }
+}

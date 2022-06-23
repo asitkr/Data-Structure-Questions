@@ -1,0 +1,22 @@
+//Method Overloading: changing no. of arguments
+
+class Add
+{
+	static int add(int a, int b)
+	{
+		return a+b;
+	}
+
+	static int add(int a, int b, int c)
+	{
+		return a+b+c;
+	}
+}
+
+class MethodOverloading 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}

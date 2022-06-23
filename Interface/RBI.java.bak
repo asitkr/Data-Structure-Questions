@@ -1,0 +1,28 @@
+interface Bank
+{
+	float rateOfIntrest();
+}
+
+class SBI implements Bank
+{
+	public float rateOfIntrest() 
+	{
+		return 9.15f;
+	}
+}
+
+class PNB implements Bank
+{
+	public float rateOfIntrest() 
+	{
+		
+	}
+}
+
+class RBI 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}

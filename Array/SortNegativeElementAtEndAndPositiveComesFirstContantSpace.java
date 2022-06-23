@@ -1,0 +1,36 @@
+class SortNegativeElementAtEndAndPositiveComesFirstContantSpace
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {1, -1, 3, 2, -7, -5, 11, 6};
+		int[] arr1 = {-5, 7, -3, -4, 9, 10, -1, 11};
+		int n = arr.length;
+		int m = arr1.length;
+
+		sortNegativeAtLast(arr, n);
+		sortNegativeAtLast(arr1, m);
+	}
+
+	public static void sortNegativeAtLast(int[] arr, int n){
+		int j = 0;
+		for(int i=0; i<n; i++){
+			if(arr[i] > 0){
+				if(i != j){
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+				j++;
+			}
+		}
+
+		printArray(arr, n);
+	}
+
+	public static void printArray(int[] arr, int n){
+		for(int i=0; i<n; i++){
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+}
